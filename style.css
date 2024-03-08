@@ -51,8 +51,17 @@ html a:hover {
 
 .jgf-grid_container {
     display: grid;
+    gap: 0.5rem;
 }
 
 .jgf-grid_container.jgf-grid__col-4 {
     grid-template-columns: repeat(4, 1fr);
+}
+
+.jgf-grid_container.jgf-grid__col-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.jgf-grid_container.jgf-grid__col-2 {
+    grid-template-columns: repeat(2, 1fr);
 }
