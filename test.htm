@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimalistic Design</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display&display=swap");
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Noto Sans", system-ui, sans-serif;
+        background-color: #eceff4;
+        color: #3b4252;
+      }
+      header {
+        background-color: #2e3440;
+        color: #d8dee9;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      header a {
+        color: #d8dee9;
+        text-decoration: none;
+        margin: 0 1rem;
+      }
+      .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #81a1c1, #88c0d0);
+        color: #eceff4;
+        text-align: center;
+        padding: 0 2rem;
+      }
+      .hero h1 {
+        margin: 0;
+        font-size: 3rem;
+      }
+      .hero button {
+        background-color: #2e3440;
+        color: #d8dee9;
+        border: none;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 1rem;
+      }
+      .container {
+        display: flex;
+        padding: 2rem;
+        margin-top: 4rem; /* Adjust for fixed header */
+      }
+      .main-content {
+        flex: 2;
+        margin-right: 2rem;
+      }
+      .sidebar {
+        flex: 1;
+      }
+      footer {
+        background-color: #2e3440;
+        color: #d8dee9;
+        text-align: center;
+        padding: 1rem 2rem;
+        width: 100%;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">Logo</div>
+      <nav>
+        <a href="/index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Welcome to Minimalistic Design</h1>
+      <button>Get Started</button>
+    </section>
+
+    <div class="container">
+      <div class="main-content">
+        <h2>Main Content</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+      <div class="sidebar">
+        <h2>Sidebar</h2>
+        <p>Recent Posts</p>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Minimalistic Design. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
