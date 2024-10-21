@@ -3,127 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/res/styles/css/main.css">
+    <title>Jagofr's Void</title>
 </head>
-<body>
-    <div id="body-wrapper">
-        <!-- Navigation heading, will be consistent across site. -->
-        <!-- TODO: Implement component system eventually -->
-        <nav id="nav-container">
-            <div id="mobile-nav"></div>
-            <div id="desktop-nav">
-                <a href="#">Home</a>
-                <a href="#">Resume</a>
-                <a href="#">Blog</a>
-                <a href="#">Portfolio</a>
-                <a href="#">Contact</a>
-            </div>
+<body id="site-body">
+    <!-- Displayed on Desktop by Default -->
+     <!-- Hidden on Mobile -->
+    <aside id="site-nav">
+        <nav id="site-nav-group">
+            <ul id="site-nav-list">
+                <li class="site-nav-list-item">
+                    <a href="#" class="site-nav-list-item-link">Home</a>
+                </li>
+                <li class="site-nav-list-item">
+                    <a href="#" class="site-nav-list-item-link">About</a>
+                </li>
+                <li class="site-nav-list-item">
+                    <a href="#" class="site-nav-list-item-link">Blog</a>
+                </li>
+                <li class="site-nav-list-item">
+                    <a href="#" class="site-nav-list-item-link">Portfolio</a>
+                </li>
+                <li class="site-nav-list-item">
+                    <a href="#" class="site-nav-list-item-link">Contact</a>
+                </li>
+            </ul>
+            <ul id="site-nav-list-socials">
+                <li class="site-nav-list-socials-item">
+                    <a href="#" class="site-nav-list-socials-item-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+                <li class="site-nav-list-socials-item">
+                    <a href="#" class="site-nav-list-socials-item-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li class="site-nav-list-socials-item">
+                    <a href="#" class="site-nav-list-socials-item-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </li>
+                <li class="site-nav-list-socials-item">
+                    <a href="#" class="site-nav-list-socials-item-link">
+                        <i class="fab fa-medium"></i>
+                    </a>
+                </li>
+                <li class="site-nav-list-socials-item">
+                    <a href="#" class="site-nav-list-socials-item-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+                <li class="site-nav-list-socials-item">
+                    <a href="#" class="site-nav-list-socials-item-link">
+                        <i class="fab fa-soundcloud"></i>
+                    </a>
+                </li>
+                <li class="site-nav-list-socials-item">
+                    <a href="#" class="site-nav-list-socials-item-link">
+                        <i class="fab fa-spotify"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul id="site-nav-list-misc">
+                <li class="site-nav-list-misc-item">
+                    <a href="#" class="site-nav-list-misc-link">Site Map</a>
+                </li>
+                <li class="site-nav-list-misc-item">
+                    <a href="#" class="site-nav-list-misc-link">Legal</a>
+                </li>
+            </ul>
         </nav>
-        <!-- Homepage stuff, kinda unique to the homepage -->
-        <header class="homepage splash">
-            <!-- Hosts a professional catch phrase of who I am, social media links and a "hire me" CTA -->
-            <section id="splash-body" class="splash-body">
-                <h2>Web Developer. Media Producer. Tech Enthusiast.</h2>
-                <h1>Gerard "Jagofr" Francis</h1>
-                <!-- Do a scroll arrow indicator icon thing here -->
-                <i></i>
-            </section>
-            <!-- Hosts elements that link to other pages, which I want to funnel users towards -->
-            <aside id="splash-aside" class="splash-sidebar">
-                <!-- Card Style, has title, blurb, date and clickthrough link. No image required. -->
-                <div class="latest-posts">
-                    <div class="news-card">
-                        <h4>Web Dev Log - Day# 342</h4>
-                        <em>Aug 2, 2024</em>
-                        <p>A shorrt excerpt of the first few lines of the blgo post to preview for teh user. This isn't too long so as to fit in the space.</p>
-                        <a href="#">Read More</a>
-                    </div>
-                    <div class="news-card">
-                        <h4>Web Dev Log - Day# 342</h4>
-                        <em>Aug 2, 2024</em>
-                        <p>A shorrt excerpt of the first few lines of the blgo post to preview for teh user. This isn't too long so as to fit in the space.</p>
-                        <a href="#">Read More</a>
-                    </div>
-                    <div class="news-card">
-                        <h4>Web Dev Log - Day# 342</h4>
-                        <em>Aug 2, 2024</em>
-                        <p>A shorrt excerpt of the first few lines of the blgo post to preview for teh user. This isn't too long so as to fit in the space.</p>
-                        <a href="#">Read More</a>
-                    </div>
-                    <a href="#">See More</a>
-                </div>
-                <!-- Banner/Image Slideshow Style, has cards, can have images. -->
-                <div class="lastest-news">
-                    <div class="news-card">
-                        <h4>New Project Published!</h4>
-                        <em>Aug 6, 2024</em>
-                        <p>Here's some body text giving a blurb summary of the news post titled above. This is not to exceed a certain length to make it easy.</p>
-                        <a href="#">Read More</a>
-                    </div>
-                    <div class="news-card">
-                        <h4>New Project Published!</h4>
-                        <em>Aug 6, 2024</em>
-                        <p>Here's some body text giving a blurb summary of the news post titled above. This is now to exceed a certain length to make it easy.</p>
-                        <a href="#">Read More</a>
-                    </div>
-                    <div class="news-card">
-                        <h4>New Project Published!</h4>
-                        <em>Aug 6, 2024</em>
-                        <p>Here's some body text giving a blurb summary of the news post titled above. This is now to exceed a certain length to make it easy.</p>
-                        <a href="#">Read More</a>
-                    </div>
-                    <a href="#">See More</a>
-                </div>
-            </aside>
+
+    </aside>
+    <!-- Shares space with Nav on Desktop by Default -->
+     <!-- Fills entire space on Mobile -->
+    <main id="site-main">
+        <header id="site-head">
+            <!-- Navigation Button hidden on Desktop by Default -->
+            <!-- Shown on Mobile -->
+            <button id="hamburger-button" title="Navigation Menu">
+                <span class="burger-part" id="lettuce"></span>
+                <span class="burger-part" id="cheese"></span>
+                <span class="burger-part" id="patty"></span>
+            </button>
+            <div id="site-head-img-container">
+                <!-- Scalable Vector Logo -->
+                <object data="/res/svg/jagofr-logo.svg" type="image/svg+xml" alt="Jagofr Logo" title="Jagofr's Logo">
+                    <!-- Data Efficent Image Fallback -->
+                    <img srcset="/res/img/jagofr-logo-sm.webp 480w, /res/img/jagofr-logo-md.webp 768w, /res/img/jagofr-logo-lg.webp 1024w" alt="Jagofr Logo" sizes="(min-width: 768px) 768px, (min-width: 1024px) 1024px">
+                </object>
+            </div>
         </header>
-        <main id="main-content" class="homepage main">
-            <section id="self-summary">
-                <div class="summary-group">
-                    <div class="summary-body">
-                        <h1>Who am I?</h1>
-                        <h2>Passionate. Comprehensive. Creative.</h2>
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores sequi error dicta ratione amet labore perspiciatis sit facilis saepe delectus placeat, porro esse aliquam. Quod sequi tenetur inventore, iusto illum ipsam distinctio itaque esse quos eum obcaecati eligendi odit earum ab provident, eius ea id non facilis numquam, dicta beatae aspernatur? Placeat, sint veritatis!
-                        </p>
-                        <a href="#">See my Resume Here!</a>
-                    </div>
-                    <div class="summary-image">
-                        <img src="#" alt="Headshot Photo of Me!">
-                    </div>
-                </div>
+        <section id="site-content">
+            <section id="site-sect-hero">
+                <h1>Hi!</h1>
             </section>
-            <section id="explore">
-                <div class="explore-group">
-                    <h2>A Collection of my Projects and Works</h2>
-                    <p>I create projects occasionally to either sate a need of my own, or to demonstrate some new skill or technology I have learned recently. Take a look below!</p>
-                    <div class="explore-card">
-                        <img src="#" alt="Card Spotlight Image">
-                        <h4>Card Title</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, minima libero, quibusdam nobis repellat aperiam dolore voluptate.</p>
-                    </div>
-                    <div class="explore-card">
-                        <img src="#" alt="Card Spotlight Image">
-                        <h4>Card Title</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, minima libero, quibusdam nobis repellat aperiam dolore voluptate.</p>
-                    </div>
-                    <div class="explore-card">
-                        <img src="#" alt="Card Spotlight Image">
-                        <h4>Card Title</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, minima libero, quibusdam nobis repellat aperiam dolore voluptate.</p>
-                    </div>
-                </div>
+            <section id="site-sect-summary"></section>
+            <section id="site-sect-experience"></section>
+            <section id="site-sect-tech"></section>
+            <section id="site-sect-portfolio"></section>
+            <section id="site-sect-contact"></section>
+        </section>
+        <footer id="site-foot">
+            <section id="site-foot-copy-sect">
+                <p class="copy-text">Copyright &copy; 2024 <br> Gerard "Jagofr" Francis <br> All Rights Reserved</p>
             </section>
-        </main>
-        <footer id="site-footer">
-            <h5>Designed and Developed by Gerard Francis</h5>
-            <span class="social-links">
-                <p>Connect:</p>
-                <i class="lab la-github"></i>
-                <i class="lab la-linkedin"></i>
-            </span>
-            <p class="copy-text">All Rights Reserved. Gerard G. "Jagofr" Francis, 2024</p>
         </footer>
-        <a id="back-to-top" href="#top">Back to Top</a>
-    </div>
+    </main>
 </body>
 </html>
