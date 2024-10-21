@@ -1,0 +1,17 @@
+{
+  "lang": "en-us",
+  "name": "Jagofr's Void - Personal Site & Blog",
+  "short_name": "Jagofr's Void",
+  "description": "Jagofr's Personal Website and Blogging Space.",
+  "start_url": "/",
+  "background_color": "#0c0812",
+  "theme_color": "#1c1328",
+  "orientation": "portrait",
+  "display": "standalone",
+  "icons": [
+      {
+          "src": "/res/img/Jagofr-Logo-app.png",
+          "sizes": "512x512"
+      }
+  ]
+}

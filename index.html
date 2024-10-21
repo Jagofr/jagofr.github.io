@@ -2,10 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">    
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- possible content values: default, black or black-translucent -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/res/styles/css/main.css">
+    <link rel="manifest" href="/manifest.json">
     <title>Jagofr's Void</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            /* Mobile Navigation Button Toggle */
+            // Variables
+            let hamburgerBtn = document.querySelector("button#hamburger-button");
+            let siteNavMenu = document.querySelector("aside#site-nav");
+           
+            document.addEventListener("click", (clickEvt) => {
+                let clickedElements = document.elementsFromPoint(clickEvt.clientX, clickEvt.clientY);
+                if(siteNavMenu.classList.contains("open")) {
+                    if(
+                        (
+                            !Array.from(clickedElements).includes(siteNavMenu) 
+                            && !Array.from(clickedElements).includes(hamburgerBtn)
+                        )
+                        || clickEvt.target.tagName.toLowerCase() === "a"
+                        || (
+                            clickEvt.target.tagName.toLowerCase() === "i" 
+                            && clickEvt.target.parentElement.tagName.toLowerCase() === "a"
+                        )
+                    ){
+                        siteNavMenu.classList.remove("open");
+                    }
+                }
+            });
+            // Toggle Function
+            function toggleNavigationMenu() {
+                siteNavMenu.classList.toggle("open");
+            }
+            hamburgerBtn.addEventListener("click", (clickEvt) => {
+                clickEvt.preventDefault();
+                toggleNavigationMenu();
+            });
+        })
+    </script>
 </head>
 <body id="site-body">
     <!-- Displayed on Desktop by Default -->
@@ -83,11 +123,23 @@
         <header id="site-head">
             <!-- Navigation Button hidden on Desktop by Default -->
             <!-- Shown on Mobile -->
-            <button id="hamburger-button" title="Navigation Menu">
-                <span class="burger-part" id="lettuce"></span>
-                <span class="burger-part" id="cheese"></span>
-                <span class="burger-part" id="patty"></span>
-            </button>
+            <div id="navigation-btn-grp">
+                <button id="reload-button" onclick="location.reload();" title="Refresh Current Page">
+                    <i class="fas fa-rotate-right"></i>
+                </button>
+                <button id="hamburger-button" title="Navigation Menu">
+                <!--
+                    <span class="burger-part" id="lettuce"></span>
+                    <span class="burger-part" id="cheese"></span>
+                    <span class="burger-part" id="patty"></span>
+                -->
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="#top" id="top-button" title="Back to Top">
+                    <i class="fas fa-arrow-up"></i>
+                </a>
+            </div>
+
             <div id="site-head-img-container">
                 <!-- Scalable Vector Logo -->
                 <object data="/res/svg/jagofr-logo.svg" type="image/svg+xml" alt="Jagofr Logo" title="Jagofr's Logo">
@@ -112,5 +164,10 @@
             </section>
         </footer>
     </main>
+    <script defer>
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw_pwaManager.js', { scope: '/' });
+        }
+    </script>
 </body>
 </html>
