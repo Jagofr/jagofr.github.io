@@ -2,5 +2,5 @@
 -------
 
 ## Todo
-[] Finish Building Page
-[] Finish Editing Readme.md
+- [ ] Finish Building Page
+- [ ] Finish Editing Readme.md
