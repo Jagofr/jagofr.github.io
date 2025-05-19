@@ -31,7 +31,12 @@ ol, ul {
   display: flex;
   flex-flow: column nowrap;
 }
-
+.logo-link {
+  text-align: center; display: flex; flex-flow: column nowrap; align-items: center; justify-content: center;
+}
+.logo-link > .logo-img {
+  width: 100px; height: auto; text-align: center; margin: 0 auto;
+}
 
 .link-list {
   list-style-type: '-   ';
