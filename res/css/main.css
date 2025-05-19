@@ -20,7 +20,7 @@ ol, ul {
   grid-template-columns: 1fr 5fr;
 }
 
-#post-body {
+#post-body, #page-body {
   padding: 1rem;
 }
 

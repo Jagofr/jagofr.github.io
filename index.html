@@ -7,18 +7,26 @@
 <link rel="stylesheet" href="/res/css/main.css">
 </head>
 <body>
-  <div>
-    <h1>This the Homepage</h1>
-    <p>Homepage content</p>
-    <p>I'm testing static hosting and trying to get pretty urls.</p>
-  </div>
-  <div>
-    <h2>Table of Contents</h2>
-    <ul>
-      <li><a href="/about">About</a></li>
-      <li><a href="/blog">Blog</a></li>
-      <li><a href="/contact">Contact</a></li>
-    </ul>
-  </div>
+  <main id="page-content">
+    <aside class="side-bar">
+      <a class="logo-link" href="/">
+        <img src="/res/media/jagofr-logo-sm.webp" type="image/webp"  alt="Jagofr's Logo" class="logo-img">
+        <span>Home</span>
+      </a>
+      <br>
+      <hr>
+      <br>
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </aside>
+    <div id="page-body">
+      <h1>This the Homepage</h1>
+      <p>Homepage content</p>
+      <p>I'm testing static hosting and trying to get pretty urls.</p>
+    </div>
+  </main>
 </body>
 </html>
