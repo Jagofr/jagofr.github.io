@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,26 +7,61 @@
 <link rel="stylesheet" href="/res/css/main.css">
 </head>
 <body>
-  <main id="page-content">
-    <aside class="side-bar">
-      <a class="logo-link" href="/">
-        <img src="/res/media/jagofr-logo-sm.webp" type="image/webp"  alt="Jagofr's Logo" class="logo-img">
-        <span>Home</span>
-      </a>
-      <br>
-      <hr>
-      <br>
-      <ul>
-        <li><a href="/about">About</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </aside>
-    <div id="page-body">
-      <h1>This the Homepage</h1>
-      <p>Homepage content</p>
-      <p>I'm testing static hosting and trying to get pretty urls.</p>
-    </div>
+  <main id="site-content">
+    <!-- This section is unique on the whole site. -->
+    <article id="homepage-content">
+      <!-- This section fills th entire first page on mobile -->
+      <section class="lander">
+        <img src="/res/media/jagofr-logo-sm.webp" alt="Jagofr's Logo" class="img">
+        <div class="title-group">
+          <h1>The V0id</h1>
+          <h2>Jagofr's Homepage & Blog</h2>
+        </div>
+        <a href="#about" id="next-sect-btn" class="btn" title="Enter below... Click here...">
+          <p>Enter below</p>
+          <div class="arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+              <path d="M19 9L14 14.1599C13.7429 14.4323 13.4329 14.6493 13.089 14.7976C12.7451 14.9459 12.3745 15.0225 12 15.0225C11.6255 15.0225 11.2549 14.9459 10.9109 14.7976C10.567 14.6493 10.2571 14.4323 10 14.1599L5 9" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+      </section>
+      <br id="about" style="padding: 0; margin: 0; border: none; height: 0; width: 100%;">
+      <nav class="home-header" id="home-nav">
+        <img src="#" alt="Jagofr Logo Mini">
+        <h3><a href="#top">The V0id</a> </h3>
+        <div></div>
+        <span id="mobile-menu-btn" style="display: flex; width: 3rem; height: auto; padding: 0.6rem; margin-right: 0.2rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <path d="M3 6H21" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 12H21" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 18H21" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </nav>
+      <section>
+        <h1>Welcome to The V0id</h1>
+        <p>This is Jagofr's personal homepage and blog, where you can find various articles, projects, and updates.</p>
+        <p>Feel free to explore the site and learn more about my work and interests.</p>
+        <a href="/blog" class="btn">Visit the Blog</a>
+      </section>
+      <section>
+        <h4>Lorem Ipsum</h4>
+        <h5>For the sake of it and to pad space.</h5>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe totam suscipit a commodi consequatur ratione in esse consequuntur nisi. Labore magni recusandae molestiae voluptas? Assumenda dolor aliquam quia doloribus blanditiis eos fuga, ullam in molestiae ducimus accusantium cum minima debitis sequi voluptas molestias nam harum sint id dolorum tempora distinctio ipsam! Perferendis, odio! Repellendus, praesentium numquam aperiam tenetur placeat, velit recusandae vel reprehenderit eius eaque voluptatum, facere culpa error amet possimus laudantium. Est explicabo harum impedit assumenda, at libero voluptas cumque natus laudantium dolores amet? Quo voluptatem quasi praesentium cupiditate deleniti fugit molestias fuga reiciendis sequi, placeat nam ratione aliquam libero ducimus corrupti consectetur cumque suscipit ipsum illum vitae? Voluptatibus repellendus, mollitia necessitatibus deserunt iure maiores doloremque sunt in iusto hic libero veniam debitis a nobis tempora ut consequatur incidunt laborum molestiae enim suscipit vero aliquam itaque nemo! Mollitia vitae, expedita id voluptatum ea ipsa repellat et, nihil, ullam architecto nam laborum iste dolorum! Quidem soluta harum voluptatibus mollitia consequuntur reiciendis nesciunt temporibus molestiae, saepe nostrum placeat autem possimus? Sit vero odio aliquid praesentium modi magnam eum illum vel possimus voluptatem repellendus, dolor ducimus blanditiis laboriosam facilis sint! Ullam quis error itaque.</p>
+      </section>
+      <section>
+        <h2>Latest Posts</h2>
+        <ul class="post-list">
+          <li><a href="/blog/01-post.html">Understanding the Basics of Web Development</a></li>
+          <li><a href="/blog/02-post.html">Exploring JavaScript Frameworks</a></li>
+          <li><a href="/blog/03-post.html">Tips for Effective Coding Practices</a></li>
+        </ul>
+    </article>
+    <footer class="site-footer">
+      <p>&copy; 2025 Gerard "Jagofr" Francis & AVATO Media. All rights reserved.</p>
+      <a href="/legal" id="legal">Legal</a>
+    </footer>
   </main>
 </body>
 </html>
