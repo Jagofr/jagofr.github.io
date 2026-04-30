@@ -1,0 +1,19 @@
+<!-- Testing pulling the slug for a post with built in javascript on this page and displaying it in the h1 tag here.-->
+<h1 id="title">Title</h1>
+<p id="summary">Summary of the post.</p>
+<p>Just Testing some stuff!</p>
+
+<script>
+    // Get the title from the posts.json file based on the slug in the URL.
+    const slug = window.location.pathname.split('/').pop().replace('.html', '');
+    fetch('/posts.json')
+        .then(response => response.json())
+        .then(posts => {
+            const post = posts.find(p => p.slug === slug);
+            if (post) {
+                document.getElementById('title').textContent = post.title;
+                document.getElementById('summary').textContent = post.summary;
+            }
+        })
+        .catch(error => console.error('Error fetching posts:', error));
+</script>
