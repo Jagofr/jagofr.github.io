@@ -1,87 +1,115 @@
+/**
+ * Jamie's Blog - Vanilla SPA Engine
+ * No frameworks. No fluff. 
+ */
+
 const container = document.getElementById('view-container');
 let postsCache = null;
 
-// Helper to get posts, caching them so we don't fetch every time
+// 1. DATA FETCHING & SORTING
 async function getPosts() {
     if (postsCache) return postsCache;
-    const res = await fetch('posts.json');
-    const posts = await res.json();
-    
-    // Sort newest first using both date and time
-    postsCache = posts.sort((a, b) => {
-        const dateA = new Date(`${a.date}T${a.time}`);
-        const dateB = new Date(`${b.date}T${b.time}`);
-        return dateB - dateA;
-    });
-    
-    return postsCache;
+
+    try {
+        const res = await fetch('./posts.json');
+        const posts = await res.json();
+
+        // Sort: Newest First (Date + Time)
+        postsCache = posts.sort((a, b) => {
+            const dateTimeA = new Date(`${a.date}T${a.time}`);
+            const dateTimeB = new Date(`${b.date}T${b.time}`);
+            return dateTimeB - dateTimeA;
+        });
+
+        return postsCache;
+    } catch (err) {
+        console.error("Failed to load posts.json", err);
+        return [];
+    }
 }
 
+// 2. ROUTE DEFINITIONS
 const routes = {
     '#home': () => {
-        container.innerHTML = `<h1>Home</h1><p>Welcome to my corner of the web. No frameworks, just code.</p>`;
+        container.innerHTML = `
+            <h1>Home</h1>
+            <p>Welcome. This is a framework-free zone.</p>
+            <p>Building things from the ground up because it's the only way to stay sane.</p>
+        `;
     },
     '#about': async () => {
-        const res = await fetch('pages/about.html');
-        container.innerHTML = res.ok ? await res.text() : '<h1>About Me</h1><p>Working on it!</p>';
+        const res = await fetch('./pages/about.html');
+        container.innerHTML = res.ok ? await res.text() : '<h1>About</h1><p>Web Developer based in Kingston.</p>';
     },
     '#posts': async () => {
         const posts = await getPosts();
         const list = posts.map(p => `
-            <li>
-                <strong>${p.date}</strong> [${p.time.substring(0, 5)}]: 
-                <a href="#post/${p.slug}">${p.title}</a> 
-                <br><small>${p.summary}</small>
-            </li>`).join('');
-        
-        container.innerHTML = `<h1>Blog Posts</h1><ul class="post-list">${list}</ul>`;
+            <li class="post-item">
+                <span class="post-meta">${p.date} @ ${p.time.substring(0, 5)}</span><br>
+                <a href="#post/${p.slug}" class="post-link">${p.title}</a>
+                <p class="post-summary">${p.summary}</p>
+            </li>
+        `).join('');
+
+        container.innerHTML = `<h1>Archive</h1><ul class="post-list">${list}</ul>`;
     }
 };
 
+// 3. THE ROUTER ENGINE
 async function router() {
     const hash = window.location.hash || '#home';
     
+    // Handle Individual Blog Posts
     if (hash.startsWith('#post/')) {
         const slug = hash.split('/')[1];
+        
+        // Fetch post data and content simultaneously
         const [posts, res] = await Promise.all([
             getPosts(),
-            fetch(`posts/${slug}.html`)
+            fetch(`./posts/${slug}.html`)
         ]);
 
         if (res.ok) {
-            // 1. Inject the HTML content
-            container.innerHTML = await res.text();
-
-            // 2. Find the metadata for this slug
             const postData = posts.find(p => p.slug === slug);
-            
-            // 3. Update the template elements if they exist
-            if (postData) {
-                const titleEl = document.getElementById('title');
-                const summaryEl = document.getElementById('summary');
-                const dateEl = document.getElementById('post-date'); // Added for flavor
+            const bodyContent = await res.text();
 
-                if (titleEl) titleEl.textContent = postData.title;
-                if (summaryEl) summaryEl.textContent = postData.summary;
-                if (dateEl) dateEl.textContent = `${postData.date} @ ${postData.time}`;
-                
-                // Update browser tab title
-                document.title = `${postData.title} | Jamie's Blog`;
-            }
+            // Inject Template + Body Content
+            container.innerHTML = `
+                <article class="post-article" id="post-${slug}">
+                    <header class="post-header">
+                        <h1>${postData ? postData.title : 'Untitled'}</h1>
+                        <div class="post-metadata">
+                            <time>${postData ? postData.date : ''} | ${postData ? postData.time : ''}</time>
+                        </div>
+                        <p class="post-description"><em>${postData ? postData.summary : ''}</em></p>
+                    </header>
+                    <hr>
+                    <div id="post-content">
+                        ${bodyContent}
+                    </div>
+                </article>
+            `;
+
+            // Update Meta
+            document.title = postData ? `${postData.title} | Jamie's Blog` : "Jamie's Blog";
+            window.scrollTo(0, 0);
         } else {
             container.innerHTML = '<h1>404</h1><p>Post not found.</p>';
         }
         return;
     }
 
+    // Handle Static Routes
     const routeAction = routes[hash];
     if (routeAction) {
         await routeAction();
         document.title = "Jamie's Blog";
+        window.scrollTo(0, 0);
     } else {
         container.innerHTML = '<h1>404</h1><p>Page not found.</p>';
     }
 }
 
+// 4. EVENT LISTENERS
 window.addEventListener('hashchange', router);
 window.addEventListener('load', router);
