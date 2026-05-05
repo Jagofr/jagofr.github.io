@@ -5,33 +5,5 @@
     "date": "2026-04-29",
     "time": "00:00:00",
     "summary": "Just a hello world post to get this out."
-  },
-  {
-    "title": "Getting My Shit Out There",
-    "slug": "getting-started",
-    "date": "2026-04-29",
-    "time": "12:00:00",
-    "summary": "The first step to the PWA dream. Or something like that AI said."
-  },
-  {
-    "title": "Haxe Framework? My CMS Framework Idea.",
-    "slug": "haxe-plans",
-    "date": "2026-04-29",
-    "time": "14:23:45",
-    "summary": "Am I going to make a haxe framework? Or am I just going to be lazy? Who knows!"
-  },
-  {
-    "title": "Self Hosting? GitHub? Or Cloud Hosting?",
-    "slug": "self-hosting-or-git",
-    "date": "2026-04-29",
-    "time": "17:22:21",
-    "summary": "Exploring the pros and cons of different hosting options. Possibly sticking with GitHub until..."
-  },
-  {
-    "title": "Why is being a Jamaican Dev so overwhelming and unfulfilling?",
-    "slug": "being-a-jamaican-dev",
-    "date": "2026-04-29",
-    "time": "21:46:36",
-    "summary": "If I'm going to be an honest dev, it's kinda hard being a Jamaican one."
   }
 ]
