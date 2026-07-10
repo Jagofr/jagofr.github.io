@@ -1,0 +1,14 @@
+[
+    {
+        "slug": "my-first-post",
+        "title": "My First Post",
+        "date": "2026-07-10T10:00:00Z",
+        "summary": "This is the summary of my very first post in the void."
+    },
+    {
+        "slug": "pwa-journey",
+        "title": "A Journey into PWAs",
+        "date": "2026-07-11T12:30:00Z",
+        "summary": "Documenting the process of building this offline-first blog."
+    }
+]

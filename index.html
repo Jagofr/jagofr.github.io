@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Standard Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jamie's Blog</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- PWA Manifest and Theming -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#005bb5"/>
+    <link rel="apple-touch-icon" href="/public/res/apple-touch-icon.png">
+
+    <title>Void0fr</title>
+
+    <!-- App Stylesheet and Script -->
+    <link rel="stylesheet" href="/public/css/style.css">
+    <script src="app.js" type="module" defer></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#home">Home</a> | 
-            <a href="#posts">Blog</a> | 
-            <a href="#about">About</a>
+    <main id="app">
+        <header>
+            <button id="site-nav-btn" class="btn nav-btn" title="Main Menu">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            </button>
+            <h1>Void0fr</h1>
+        </header>
+        <nav id="site-nav">
+            <a href="/" data-link>Home</a>
+            <a href="/posts" data-link>Posts</a>
+            <a href="/about" data-link>About</a>
         </nav>
-    </header>
 
-    <main id="view-container">
-        </main>
+        <!-- The content of your pages (home, post, about) will be rendered here by the router -->
+        <div id="content"></div>
 
-    <footer>
-        <p>&copy; 2026 Jamie "Jagofr" Francis</p>
-    </footer>
-
-    <script src="app.js"></script>
+        <footer>
+            <p>&copy; 2026 Void0fr. All rights reserved.</p>
+        </footer>
+    </main>
 </body>
 </html>
